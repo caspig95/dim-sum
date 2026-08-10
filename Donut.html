@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泰語港式點心海報標註發音</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .instruction {
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        .alert-box {
+            display: none;
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        /* 外層容器：相對定位基準 */
+        .poster-container {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            display: inline-block;
+        }
+
+        /* 海報圖片自適應 */
+        .poster-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        /* 點擊熱點樣式 (圓形半透明，滑鼠移上去會高亮) */
+        .hotspot {
+            position: absolute;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: rgba(255, 235, 59, 0.25);
+            border: 2px dashed #ff9800;
+            transition: all 0.2s ease;
+        }
+
+        .hotspot:hover {
+            background-color: rgba(255, 235, 59, 0.65);
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="instruction">💡 提示：點擊圖片上的點心圖案即可聆聽泰語發音！</div>
+
+    <!-- 語音套件缺失警告 -->
+    <div id="tts-warning" class="alert-box">
+        ⚠️ 找不到泰文語音。請檢查您的瀏覽器或作業系統設定，並安裝泰文語音包。
+    </div>
+
+    <!-- 海報與熱點區域 -->
+    <div class="poster-container">
+        <!-- 讀取上傳的點心圖片 -->
+        <img class="poster-image" src="Dim Sum Vocabulary-260810.jpg" alt="港式點心泰語海報">
+
+        <!-- 熱點 1: 燒賣 (ขนมจีบ) -->
+        <div class="hotspot" style="top: 25.5%; left: 3%; width: 15.5%; height: 13.5%;" onclick="speakThai('ขนมจีบ')" title="燒賣 (ขนมจีบ)"></div>
+
+        <!-- 熱點 2: 蝦餃 (ฮะเก๋า) -->
+        <div class="hotspot" style="top: 25.5%; left: 29.5%; width: 15.5%; height: 13.5%;" onclick="speakThai('ฮะเก๋า')" title="蝦餃 (ฮะเก๋า)"></div>
+
+        <!-- 熱點 3: 小籠包 (เสี่ยวหลงเปา) -->
+        <div class="hotspot" style="top: 25.5%; left: 56.5%; width: 15.5%; height: 13.5%;" onclick="speakThai('เสี่ยวหลงเปา')" title="小籠包 (เสี่ยวหลงเปา)"></div>
+
+        <!-- 熱點 4: 餃子 (เกี๊ยว) -->
+        <div class="hotspot" style="top: 25.5%; left: 82.5%; width: 15.5%; height: 13.5%;" onclick="speakThai('เกี๊ยว')" title="餃子 (เกี๊ยว)"></div>
+
+        <!-- 熱點 5: 韭菜餃子 (ขนมกุยช่าย) -->
+        <div class="hotspot" style="top: 36.5%; left: 16%; width: 15.5%; height: 13.5%;" onclick="speakThai('ขนมกุยช่าย')" title="韭菜餃 (ขนมกุยช่าย)"></div>
+
+        <!-- 熱點 6: 灌湯餃 (ซุปเกี๊ยว) -->
+        <div class="hotspot" style="top: 36.5%; left: 42.5%; width: 15.5%; height: 13.5%;" onclick="speakThai('ซุปเกี๊ยว')" title="灌湯餃 (ซุปเกี๊ยว)"></div>
+
+        <!-- 熱點 7: 粉果 (ฝันโก๋) -->
+        <div class="hotspot" style="top: 36.5%; left: 71.5%; width: 15.5%; height: 13.5%;" onclick="speakThai('ฝันโก๋')" title="粉果 (ฝันโก๋)"></div>
+
+        <!-- 熱點 8: 腐皮捲 (ฟองเต้าหู้ม้วน) -->
+        <div class="hotspot" style="top: 61%; left: 15.5%; width: 16.5%; height: 13.5%;" onclick="speakThai('ฟองเต้าหู้ม้วน')" title="腐皮捲 (ฟองเต้าหู้ม้วน)"></div>
+
+        <!-- 熱點 9: 春捲 (เปาะเปี๊ยะทอด) -->
+        <div class="hotspot" style="top: 61%; left: 42.5%; width: 16.5%; height: 13.5%;" onclick="speakThai('เปาะเปี๊ยะทอด')" title="春捲 (เปาะเปี๊ยะทอด)"></div>
+
+        <!-- 熱點 10: 腸粉 (ก๋วยเตี๋ยวหลอด) -->
+        <div class="hotspot" style="top: 61%; left: 70%; width: 16.5%; height: 13.5%;" onclick="speakThai('ก๋วยเตี๋ยวหลอด')" title="腸粉 (ก๋วยเตี๋ยวหลอด)"></div>
+
+        <!-- 熱點 11: 饅頭 (หมั่นโถว) -->
+        <div class="hotspot" style="top: 83.5%; left: 34.5%; width: 15.5%; height: 12.5%;" onclick="speakThai('หมั่นโถว')" title="饅頭 (หมั่นโถว)"></div>
+
+        <!-- 熱點 12: 包子 / 叉燒包 (ซาลาเปา) -->
+        <div class="hotspot" style="top: 83.5%; left: 55.5%; width: 15.5%; height: 12.5%;" onclick="speakThai('ซาลาเปา')" title="包子 (ซาลาเปา)"></div>
+    </div>
+
+<script>
+    let thaiVoice = null;
+
+    function initTTS() {
+        if (!('speechSynthesis' in window)) {
+            document.getElementById('tts-warning').style.display = 'block';
+            return;
+        }
+
+        const checkVoice = () => {
+            const voices = window.speechSynthesis.getVoices();
+            thaiVoice = voices.find(v => v.lang.includes('th') || v.lang === 'th-TH');
+
+            if (!thaiVoice) {
+                document.getElementById('tts-warning').style.display = 'block';
+            } else {
+                document.getElementById('tts-warning').style.display = 'none';
+            }
+        };
+
+        checkVoice();
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = checkVoice;
+        }
+    }
+
+    function speakThai(text) {
+        if (!('speechSynthesis' in window)) return;
+
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'th-TH';
+        if (thaiVoice) utterance.voice = thaiVoice;
+        utterance.rate = 0.85;
+
+        window.speechSynthesis.speak(utterance);
+    }
+
+    window.addEventListener('DOMContentLoaded', initTTS);
+</script>
+
+</body>
+</html>
