@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>港式點心泰文發音</title>
+  <title>港式點心泰文單字-AI發音</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -28,124 +28,111 @@
     area {
       cursor: pointer;
     }
-
-    /* 上方雙行文字動態顯示區 */
-    .text-display-box {
-      margin: 15px auto 20px;
-      padding: 12px 20px;
-      max-width: 600px;
-      background-color: #ffffff;
-      border: 2px solid #e2e8f0;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      min-height: 60px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .text-display-box .line1 {
-      font-size: 22px;
-      font-weight: bold;
-      color: #2b6cb0;
-      margin-bottom: 4px;
-    }
-    .text-display-box .line2 {
-      font-size: 16px;
-      color: #4a5568;
-    }
   </style>
 </head>
 <body>
 
-  <h2>🍴 港式點心單字泰文發音(AI發音) 🍴</h2>
-
-  <!-- 文字顯示區域 -->
-  <div class="text-display-box">
-    <div id="text-line1" class="line1">😋 請將滑鼠移至圖片泰文上</div>
-  </div>
+  <h2>🍴 港式點心泰文單字(AI發音) 🍴</h2>
+  <p>😋 請將滑鼠移至圖片泰文上：</p>
 
   <div class="container">
     <img src="Dim Sum Vocabulary-260810.jpg" usemap="#image-map" alt="港式點心泰文單字">
 
     <map name="image-map">
       <!-- 1. รู้จัก 3 ประเภทติ่มซำ #認識 港式點心三大類別 -->
-      <area coords="123,54,803,176" shape="rect" onmouseenter="showTextAndPlay('1-w.mp3', 'รู้จัก 3 ประเภทติ่มซำ', '#認識 港式點心三大類別')">
+      <area alt="รู้จัก 3 ประเภทติ่มซำ" title="#รู้จัก 3 ประเภทติ่มซำ
+#認識 港式點心三大類別" coords="123,54,803,176" shape="rect" onmouseenter="playMp3('1-w.mp3')">
       
       <!-- 2. อาหารว่างสุดขึ้นชื่อของจีน 中式著名代表茶點 -->
-      <area coords="471,187,760,225" shape="rect" onmouseenter="showTextAndPlay('2-w.mp3', 'อาหารว่างสุดขึ้นชื่อของจีน', '中式著名代表茶點')">
+      <area alt="อาหารว่างสุดขึ้นชื่อของจีน" title="อาหารว่างสุดขึ้นชื่อของจีน
+中式著名代表茶點" coords="471,187,760,225" shape="rect" onmouseenter="playMp3('2-w.mp3')">
       
       <!-- 3. แผ่นแป้งห่อ 面皮包裹類 -->
-      <area coords="6,207,173,255" shape="rect" onmouseenter="showTextAndPlay('3-w.mp3', 'แผ่นแป้งห่อ', '面皮包裹類')">
+      <area alt="แผ่นแป้งห่อ" title="แผ่นแป้งห่อ
+面皮包裹類" coords="6,207,173,255" shape="rect" onmouseenter="playMp3('3-w.mp3')">
       
       <!-- 4. แผ่นแป้งม้วน 面皮捲成條狀類 -->
-      <area coords="8,611,176,658" shape="rect" onmouseenter="showTextAndPlay('4-w.mp3', 'แผ่นแป้งม้วน', '面皮捲成條狀類')">
+      <area alt="แผ่นแป้งม้วน" title="แผ่นแป้งม้วน
+面皮捲成條狀類" coords="8,611,176,658" shape="rect" onmouseenter="playMp3('4-w.mp3')">
       
       <!-- 5. แป้งก้อนกลม 麵糰做成球狀類 -->
-      <area coords="14,871,176,921" shape="rect" onmouseenter="showTextAndPlay('5-w.mp3', 'แป้งก้อนกลม', '麵糰做成球狀類')">
+      <area alt="แป้งก้อนกลม" title="แป้งก้อนกลม
+麵糰做成球狀類" coords="14,871,176,921" shape="rect" onmouseenter="playMp3('5-w.mp3')">
 
       <!-- 6. ขนมจีบ 燒賣 -->
-      <area coords="40,408,127,440" shape="rect" onmouseenter="showTextAndPlay('6-w.mp3', 'ขนมจีบ', '燒賣')">
+      <area alt="ขนมจีบ" title="ขนมจีบ
+燒賣" coords="40,408,127,440" shape="rect" onmouseenter="playMp3('6-w.mp3')">
       
       <!-- 7. ฮะเก๋า 蝦餃 -->
-      <area coords="291,409,360,440" shape="rect" onmouseenter="showTextAndPlay('7-w.mp3', 'ฮะเก๋า', '蝦餃')">
+      <area alt="ฮะเก๋า" title="ฮะเก๋า
+蝦餃" coords="291,409,360,440" shape="rect" onmouseenter="playMp3('7-w.mp3')">
       
       <!-- 8. เสี่ยวหลงเปา 小籠包 -->
-      <area coords="502,404,639,442" shape="rect" onmouseenter="showTextAndPlay('8-w.mp3', 'เสี่ยวหลงเปา', '小籠包')">
+      <area alt="เสี่ยวหลงเปา" title="เสี่ยวหลงเปา
+小籠包" coords="502,404,639,442" shape="rect" onmouseenter="playMp3('8-w.mp3')">
       
       <!-- 9. เกี๊ยว 餃子 -->
-      <area coords="784,410,847,445" shape="rect" onmouseenter="showTextAndPlay('9-w.mp3', 'เกี๊ยว', '餃子')">
+      <area alt="เกี๊ยว" title="เกี๊ยว
+餃子" coords="784,410,847,445" shape="rect" onmouseenter="playMp3('9-w.mp3')">
       
       <!-- 10. ขนมกุยช่าย 韭菜餃子 -->
-      <area coords="142,525,269,555" shape="rect" onmouseenter="showTextAndPlay('10-w.mp3', 'ขนมกุยช่าย', '韭菜餃子')">
+      <area alt="ขนมกุยช่าย" title="ขนมกุยช่าย
+韭菜餃子" coords="142,525,269,555" shape="rect" onmouseenter="playMp3('10-w.mp3')">
       
       <!-- 11. ซุปเกี๊ยว 灌湯餃 -->
-      <area coords="388,521,486,557" shape="rect" onmouseenter="showTextAndPlay('11-w.mp3', 'ซุปเกี๊ยว', '灌湯餃')">
+      <area alt="ซุปเกี๊ยว" title="ซุปเกี๊ยว
+灌湯餃" coords="388,521,486,557" shape="rect" onmouseenter="playMp3('11-w.mp3')">
       
       <!-- 12. ฝันโก๋ 粉果 -->
-      <area coords="677,525,745,558" shape="rect" onmouseenter="showTextAndPlay('12-w.mp3', 'ฝันโก๋', '粉果')">
-
+      <area alt="ฝันโก๋" title="ฝันโก๋
+粉果" coords="677,525,745,558" shape="rect" onmouseenter="playMp3('12-w.mp3')">
+     
       <!-- 13. ฟองเต้าหู้ม้วน 腐皮捲 -->
-      <area coords="122,785,275,812" shape="rect" onmouseenter="showTextAndPlay('13-w.mp3', 'ฟองเต้าหู้ม้วน', '腐皮捲')">
+      <area alt="ฟองเต้าหู้ม้วน" title="ฟองเต้าหู้ม้วน
+腐皮捲" coords="122,785,275,812" shape="rect" onmouseenter="playMp3('13-w.mp3')">
 
-      <!-- 13-1. ฟองเต้าหู้ม้วนทอด 腐皮捲(炸) -->
-      <area coords="166,819,220,839" shape="rect" onmouseenter="showTextAndPlay('13-1-w.mp3', 'ฟองเต้าหู้ม้วนทอด', '腐皮捲(炸)')">
+      <!-- 13-1. ฟองเต้าหู้ม้วนทอด 腐皮捲-炸 -->
+      <area alt="ฟองเต้าหู้ม้วนทอด" title="ฟองเต้าหู้ม้วนทอด
+腐皮捲-炸" coords="166,819,220,839" shape="rect" onmouseenter="playMp3('13-1-w.mp3')">
       
-      <!-- 13-2. ฟองเต้าหู้ม้วนนึ่ง 鮮竹捲(蒸) -->
-      <area coords="263,815,291,838" shape="rect" onmouseenter="showTextAndPlay('13-2-w.mp3', 'ฟองเต้าหู้ม้วนนึ่ง', '鮮竹捲(蒸)')">
+      <!-- 13-2. ฟองเต้าหู้ม้วนนึ่ง 鮮竹捲-蒸 -->
+      <area alt="ฟองเต้าหู้ม้วนนึ่ง" title="ฟองเต้าหู้ม้วนนึ่ง
+鮮竹捲-蒸" coords="263,815,291,838" shape="rect" onmouseenter="playMp3('13-2-w.mp3')">
       
       <!-- 14. เปาะเปี๊ยะทอด 春捲 -->
-      <area coords="371,781,519,819" shape="rect" onmouseenter="showTextAndPlay('14-w.mp3', 'เปาะเปี๊ยะทอด', '春捲')">
+      <area alt="เปาะเปี๊ยะทอด" title="เปาะเปี๊ยะทอด
+春捲" coords="371,781,519,819" shape="rect" onmouseenter="playMp3('14-w.mp3')">
       
-      <!-- 15. ก๋วยเตี๋ยวหลอด 粉腸/腸粉 -->
-      <area coords="607,784,779,819" shape="rect" onmouseenter="showTextAndPlay('15-w.mp3', 'ก๋วยเตี๋ยวหลอด', '粉腸 / 腸粉')">
+      <!-- 15. ก๋วยเตี๋ยวหลอด 腸粉 -->
+      <area alt="ก๋วยเตี๋ยวหลอด" title="ก๋วยเตี๋ยวหลอด
+腸粉" coords="607,784,779,819" shape="rect" onmouseenter="playMp3('15-w.mp3')">
 
       <!-- 16. หมั่นโถว 饅頭 -->
-      <area coords="315,1013,411,1043" shape="rect" onmouseenter="showTextAndPlay('16-w.mp3', 'หมั่นโถว', '饅頭')">
+      <area alt="หมั่นโถว" title="หมั่นโถว
+饅頭" coords="315,1013,411,1043" shape="rect" onmouseenter="playMp3('16-w.mp3')">
       
       <!-- 17. ซาลาเปา 包子/叉燒包 -->
-      <area coords="507,1014,600,1043" shape="rect" onmouseenter="showTextAndPlay('17-w.mp3', 'ซาลาเปา', '包子 / 叉燒包')">
+      <area alt="ซาลาเปา" title="ซาลาเปา
+包子 / 叉燒包" coords="507,1014,600,1043" shape="rect" onmouseenter="playMp3('17-w.mp3')">
       
       <!-- 18. ซาลาเปาไส้หมูแดง 叉燒包 -->
-      <area coords="685,868,833,900" shape="rect" onmouseenter="showTextAndPlay('18-w.mp3', 'ซาลาเปาไส้หมูแดง', '叉燒包')">
-
+      <area alt="ซาลาเปาไส้หมูแดง" title="ซาลาเปาไส้หมูแดง
+叉燒包(其他說法)" coords="685,868,833,900" shape="rect" onmouseenter="playMp3('18-w.mp3')">
+      
       <!-- 19. ซาลาเปา แบบไม่มีไส้ 沒有餡料 -->
-      <area coords="111,983,280,1020" shape="rect" onmouseenter="showTextAndPlay('19-w.mp3', 'ซาลาเปา แบบไม่มีไส้', '沒有餡料')">
+      <area alt="ซาลาเปา แบบไม่มีไส้" title="ซาลาเปา แบบไม่มีไส้
+沒有餡料" coords="111,983,280,1020" shape="rect" onmouseenter="playMp3('19-w.mp3')">
 
       <!-- 20. มีไส้ข้างใน เช่น เนื้อ หรือผัก 裡面有包餡料，例如肉類或蔬菜 -->
-      <area coords="630,989,856,1023" shape="rect" onmouseenter="showTextAndPlay('20-w.mp3', 'มีไส้ข้างใน เช่น เนื้อ หรือผัก', '裡面有包餡料，例如肉類或蔬菜')">
+      <area alt="มีไส้ข้างใน เช่น เนื้อ หรือผัก" title="มีไส้ข้างใน เช่น เนื้อ หรือผัก
+裡面有包餡料，例如肉類或蔬菜" coords="630,989,856,1023" shape="rect" onmouseenter="playMp3('20-w.mp3')">
     </map>
   </div>
 
   <script>
     const player = new Audio();
 
-    function showTextAndPlay(fileName, line1Text, line2Text) {
-      // 1. 更新第一行（泰文）與第二行（中文）
-      document.getElementById('text-line1').innerText = line1Text;
-      document.getElementById('text-line2').innerText = line2Text;
-
-      // 2. 重新播放聲音
+    function playMp3(fileName) {
       player.pause();
       player.currentTime = 0;
       player.src = fileName;
