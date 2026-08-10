@@ -1,161 +1,119 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>泰語港式點心海報標註發音</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .instruction {
-            margin-bottom: 15px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #d9534f;
-        }
-
-        .alert-box {
-            display: none;
-            background-color: #fff3cd;
-            color: #856404;
-            padding: 10px 15px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        /* 外層容器：相對定位基準 */
-        .poster-container {
-            position: relative;
-            max-width: 800px;
-            width: 100%;
-            display: inline-block;
-        }
-
-        /* 海報圖片自適應 */
-        .poster-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        }
-
-        /* 點擊熱點樣式 (圓形半透明，滑鼠移上去會高亮) */
-        .hotspot {
-            position: absolute;
-            cursor: pointer;
-            border-radius: 50%;
-            background-color: rgba(255, 235, 59, 0.25);
-            border: 2px dashed #ff9800;
-            transition: all 0.2s ease;
-        }
-
-        .hotspot:hover {
-            background-color: rgba(255, 235, 59, 0.65);
-            transform: scale(1.08);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>港式點心泰文發音</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      position: relative;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    area {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="instruction">💡 提示：點擊圖片上的點心圖案即可聆聽泰語發音！</div>
+  <h2>🥟 港式點心泰文發音 🥟</h2>
+  <p>💡 將滑鼠移至文字區域即可播放泰文發音：</p>
 
-    <!-- 語音套件缺失警告 -->
-    <div id="tts-warning" class="alert-box">
-        ⚠️ 找不到泰文語音。請檢查您的瀏覽器或作業系統設定，並安裝泰文語音包。
-    </div>
+  <div class="container">
+    <img src="Dim Sum Vocabulary-260810.jpg" usemap="#image-map" alt="港式點心泰文單字">
 
-    <!-- 海報與熱點區域 -->
-    <div class="poster-container">
-        <!-- 讀取上傳的點心圖片 -->
-        <img class="poster-image" src="Dim Sum Vocabulary-260810.jpg" alt="港式點心泰語海報">
+    <map name="image-map">
+      <!-- 1. รู้จัก 3 ประเภทติ่มซำ #認識 港式點心三大類別 -->
+      <area alt="รู้จัก 3 ประเภทติ่มซำ" title="認識 港式點心三大類別" coords="123,54,803,176" shape="rect" onmouseenter="playMp3('1-w.mp3')">
+      
+      <!-- 2. อาหารว่างสุดขึ้นชื่อของจีน 中式著名代表茶點 -->
+      <area alt="อาหารว่างสุดขึ้นชื่อของจีน" title="中式著名代表茶點" coords="471,187,760,225" shape="rect" onmouseenter="playMp3('2-w.mp3')">
+      
+      <!-- 3. แผ่นแป้งห่อ 面皮包裹類 -->
+      <area alt="แผ่นแป้งห่อ" title="面皮包裹類" coords="6,207,173,255" shape="rect" onmouseenter="playMp3('3-w.mp3')">
+      
+      <!-- 4. แผ่นแป้งม้วน 面皮捲成條狀類 -->
+      <area alt="แผ่นแป้งม้วน" title="面皮捲成條狀類" coords="8,611,176,658" shape="rect" onmouseenter="playMp3('4-w.mp3')">
+      
+      <!-- 5. แป้งก้อนกลม 麵糰做成球狀類 -->
+      <area alt="แป้งก้อนกลม" title="麵糰做成球狀類" coords="14,871,176,921" shape="rect" onmouseenter="playMp3('5-w.mp3')">
 
-        <!-- 熱點 1: 燒賣 (ขนมจีบ) -->
-        <div class="hotspot" style="top: 25.5%; left: 3%; width: 15.5%; height: 13.5%;" onclick="speakThai('ขนมจีบ')" title="燒賣 (ขนมจีบ)"></div>
+      <!-- 6. ขนมจีบ 燒賣 -->
+      <area alt="ขนมจีบ" title="燒賣" coords="40,408,127,440" shape="rect" onmouseenter="playMp3('6-w.mp3')">
+      
+      <!-- 7. ฮะเก๋า 蝦餃 -->
+      <area alt="ฮะเก๋า" title="蝦餃" coords="291,409,360,440" shape="rect" onmouseenter="playMp3('7-w.mp3')">
+      
+      <!-- 8. เสี่ยวหลงเปา 小籠包 -->
+      <area alt="เสี่ยวหลงเปา" title="小籠包" coords="502,404,639,442" shape="rect" onmouseenter="playMp3('8-w.mp3')">
+      
+      <!-- 9. เกี๊ยว 餃子 -->
+      <area alt="เกี๊ยว" title="餃子" coords="784,410,847,445" shape="rect" onmouseenter="playMp3('9-w.mp3')">
+      
+      <!-- 10. ขนมกุยช่าย 韭菜餃子 -->
+      <area alt="ขนมกุยช่าย" title="韭菜餃子" coords="142,525,269,555" shape="rect" onmouseenter="playMp3('10-w.mp3')">
+      
+      <!-- 11. ซุปเกี๊ยว 灌湯餃 -->
+      <area alt="ซุปเกี๊ยว" title="灌湯餃" coords="388,521,486,557" shape="rect" onmouseenter="playMp3('11-w.mp3')">
+      
+      <!-- 12. ฝันโก๋ 粉果 -->
+      <area alt="ฝันโก๋" title="粉果" coords="677,525,745,558" shape="rect" onmouseenter="playMp3('12-w.mp3')">
 
-        <!-- 熱點 2: 蝦餃 (ฮะเก๋า) -->
-        <div class="hotspot" style="top: 25.5%; left: 29.5%; width: 15.5%; height: 13.5%;" onclick="speakThai('ฮะเก๋า')" title="蝦餃 (ฮะเก๋า)"></div>
+      <!-- 13-1. 腐皮捲 -->
+      <area alt="腐皮捲" title="腐皮捲" coords="166,819,220,839" shape="rect" onmouseenter="playMp3('13-1-w.mp3')">
+      
+      <!-- 13-2. 鮮竹捲 -->
+      <area alt="鮮竹捲" title="鮮竹捲" coords="263,815,291,838" shape="rect" onmouseenter="playMp3('13-2-w.mp3')">
+      
+      <!-- 14. เปาะเปี๊ยะทอด 春捲 -->
+      <area alt="เปาะเปี๊ยะทอด" title="春捲" coords="371,781,519,819" shape="rect" onmouseenter="playMp3('14-w.mp3')">
+      
+      <!-- 15. ก๋วยเตี๋ยวหลอด 粉腸/腸粉 -->
+      <area alt="ก๋วยเตี๋ยวหลอด" title="粉腸" coords="607,784,779,819" shape="rect" onmouseenter="playMp3('15-w.mp3')">
 
-        <!-- 熱點 3: 小籠包 (เสี่ยวหลงเปา) -->
-        <div class="hotspot" style="top: 25.5%; left: 56.5%; width: 15.5%; height: 13.5%;" onclick="speakThai('เสี่ยวหลงเปา')" title="小籠包 (เสี่ยวหลงเปา)"></div>
+      <!-- 16. หมั่นโถว 饅頭 -->
+      <area alt="หมั่นโถว" title="饅頭" coords="315,1013,411,1043" shape="rect" onmouseenter="playMp3('16-w.mp3')">
+      
+      <!-- 17. ซาลาเปา 叉燒包/包子 -->
+      <area alt="ซาลาเปา" title="包子/叉燒包" coords="507,1014,600,1043" shape="rect" onmouseenter="playMp3('17-w.mp3')">
+      
+      <!-- 18. ซาลาเปาไส้หมูแดง 叉燒包 -->
+      <area alt="ซาลาเปาไส้หมูแดง" title="叉燒包" coords="685,868,833,900" shape="rect" onmouseenter="playMp3('18-w.mp3')">
+    </map>
+  </div>
 
-        <!-- 熱點 4: 餃子 (เกี๊ยว) -->
-        <div class="hotspot" style="top: 25.5%; left: 82.5%; width: 15.5%; height: 13.5%;" onclick="speakThai('เกี๊ยว')" title="餃子 (เกี๊ยว)"></div>
+  <script>
+    const player = new Audio();
 
-        <!-- 熱點 5: 韭菜餃子 (ขนมกุยช่าย) -->
-        <div class="hotspot" style="top: 36.5%; left: 16%; width: 15.5%; height: 13.5%;" onclick="speakThai('ขนมกุยช่าย')" title="韭菜餃 (ขนมกุยช่าย)"></div>
-
-        <!-- 熱點 6: 灌湯餃 (ซุปเกี๊ยว) -->
-        <div class="hotspot" style="top: 36.5%; left: 42.5%; width: 15.5%; height: 13.5%;" onclick="speakThai('ซุปเกี๊ยว')" title="灌湯餃 (ซุปเกี๊ยว)"></div>
-
-        <!-- 熱點 7: 粉果 (ฝันโก๋) -->
-        <div class="hotspot" style="top: 36.5%; left: 71.5%; width: 15.5%; height: 13.5%;" onclick="speakThai('ฝันโก๋')" title="粉果 (ฝันโก๋)"></div>
-
-        <!-- 熱點 8: 腐皮捲 (ฟองเต้าหู้ม้วน) -->
-        <div class="hotspot" style="top: 61%; left: 15.5%; width: 16.5%; height: 13.5%;" onclick="speakThai('ฟองเต้าหู้ม้วน')" title="腐皮捲 (ฟองเต้าหู้ม้วน)"></div>
-
-        <!-- 熱點 9: 春捲 (เปาะเปี๊ยะทอด) -->
-        <div class="hotspot" style="top: 61%; left: 42.5%; width: 16.5%; height: 13.5%;" onclick="speakThai('เปาะเปี๊ยะทอด')" title="春捲 (เปาะเปี๊ยะทอด)"></div>
-
-        <!-- 熱點 10: 腸粉 (ก๋วยเตี๋ยวหลอด) -->
-        <div class="hotspot" style="top: 61%; left: 70%; width: 16.5%; height: 13.5%;" onclick="speakThai('ก๋วยเตี๋ยวหลอด')" title="腸粉 (ก๋วยเตี๋ยวหลอด)"></div>
-
-        <!-- 熱點 11: 饅頭 (หมั่นโถว) -->
-        <div class="hotspot" style="top: 83.5%; left: 34.5%; width: 15.5%; height: 12.5%;" onclick="speakThai('หมั่นโถว')" title="饅頭 (หมั่นโถว)"></div>
-
-        <!-- 熱點 12: 包子 / 叉燒包 (ซาลาเปา) -->
-        <div class="hotspot" style="top: 83.5%; left: 55.5%; width: 15.5%; height: 12.5%;" onclick="speakThai('ซาลาเปา')" title="包子 (ซาลาเปา)"></div>
-    </div>
-
-<script>
-    let thaiVoice = null;
-
-    function initTTS() {
-        if (!('speechSynthesis' in window)) {
-            document.getElementById('tts-warning').style.display = 'block';
-            return;
-        }
-
-        const checkVoice = () => {
-            const voices = window.speechSynthesis.getVoices();
-            thaiVoice = voices.find(v => v.lang.includes('th') || v.lang === 'th-TH');
-
-            if (!thaiVoice) {
-                document.getElementById('tts-warning').style.display = 'block';
-            } else {
-                document.getElementById('tts-warning').style.display = 'none';
-            }
-        };
-
-        checkVoice();
-        if (speechSynthesis.onvoiceschanged !== undefined) {
-            speechSynthesis.onvoiceschanged = checkVoice;
-        }
+    function playMp3(fileName) {
+      player.pause();
+      player.currentTime = 0;
+      player.src = fileName;
+      player.play().catch(e => console.log('播放提示:', e));
     }
+  </script>
 
-    function speakThai(text) {
-        if (!('speechSynthesis' in window)) return;
-
-        window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'th-TH';
-        if (thaiVoice) utterance.voice = thaiVoice;
-        utterance.rate = 0.85;
-
-        window.speechSynthesis.speak(utterance);
-    }
-
-    window.addEventListener('DOMContentLoaded', initTTS);
-</script>
+  <!-- 自動縮放座標腳本 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+  <script>
+    imageMapResize();
+  </script>
 
 </body>
 </html>
