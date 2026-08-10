@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>港式點心</title>
+  <title>港式點心泰文發音</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       text-align: center;
       background-color: #f9f9f9;
-      padding: 20px;
+      padding: 20px 10px;
       margin: 0;
     }
     .container {
@@ -33,7 +33,7 @@
     #custom-tooltip {
       position: fixed;
       display: none;
-      pointer-events: none; /* 避免擋到滑鼠觸發 */
+      pointer-events: none; /* 避免遮擋觸控事件 */
       background-color: rgba(30, 41, 59, 0.95);
       color: #ffffff;
       padding: 10px 16px;
@@ -41,26 +41,30 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
       z-index: 9999;
       text-align: center;
-      transition: opacity 0.1s ease;
+      max-width: 80vw; /* 防止手機上提示框過寬 */
+      box-sizing: border-box;
     }
     #custom-tooltip .thai-text {
-      font-size: 22px; /* 泰文大字體 */
+      font-size: 20px;
       font-weight: bold;
       color: #60a5fa;
       margin-bottom: 2px;
+      word-break: break-word;
     }
     #custom-tooltip .zh-text {
-      font-size: 16px;  /* 中文大字體 */
+      font-size: 15px;
       color: #f1f5f9;
+      word-break: break-word;
     }
   </style>
 </head>
 <body>
 
-  <h2>🍴 港式點心泰文單字(AI發音) 🍴</h2>
+  <h2>🍴 港式點心泰文單字 🍴</h2>
+  <p>(AI發音)</p>
   <p>😋 點擊任意一處開始啟用，將滑鼠移至圖片泰文上：</p>
 
-  <!-- 自訂大字體提示框 -->
+  <!-- 自訂提示框 -->
   <div id="custom-tooltip">
     <div id="tooltip-line1" class="thai-text"></div>
     <div id="tooltip-line2" class="zh-text"></div>
@@ -71,70 +75,70 @@
 
     <map name="image-map">
       <!-- 1. รู้จัก 3 ประเภทติ่มซำ #認識 港式點心三大類別 -->
-      <area coords="123,54,803,176" shape="rect" onmouseenter="handleHover('1-w.mp3', 'รู้จัก 3 ประเภทติ่มซำ', '#認識 港式點心三大類別')" onmouseleave="hideTooltip()">
+      <area coords="123,54,803,176" shape="rect" onmouseenter="handleHover(event, '1-w.mp3', 'รู้จัก 3 ประเภทติ่มซำ', '#認識 港式點心三大類別')" onmouseleave="hideTooltip()">
       
       <!-- 2. อาหารว่างสุดขึ้นชื่อของจีน 中式著名代表茶點 -->
-      <area coords="471,187,760,225" shape="rect" onmouseenter="handleHover('2-w.mp3', 'อาหารว่างสุดขึ้นชื่อของจีน', '中式著名代表茶點')" onmouseleave="hideTooltip()">
+      <area coords="471,187,760,225" shape="rect" onmouseenter="handleHover(event, '2-w.mp3', 'อาหารว่างสุดขึ้นชื่อของจีน', '中式著名代表茶點')" onmouseleave="hideTooltip()">
       
       <!-- 3. แผ่นแป้งห่อ 面皮包裹類 -->
-      <area coords="6,207,173,255" shape="rect" onmouseenter="handleHover('3-w.mp3', 'แผ่นแป้งห่อ', '面皮包裹類')" onmouseleave="hideTooltip()">
+      <area coords="6,207,173,255" shape="rect" onmouseenter="handleHover(event, '3-w.mp3', 'แผ่นแป้งห่อ', '面皮包裹類')" onmouseleave="hideTooltip()">
       
       <!-- 4. แผ่นแป้งม้วน 面皮捲成條狀類 -->
-      <area coords="8,611,176,658" shape="rect" onmouseenter="handleHover('4-w.mp3', 'แผ่นแป้งม้วน', '面皮捲成條狀類')" onmouseleave="hideTooltip()">
+      <area coords="8,611,176,658" shape="rect" onmouseenter="handleHover(event, '4-w.mp3', 'แผ่นแป้งม้วน', '面皮捲成條狀類')" onmouseleave="hideTooltip()">
       
       <!-- 5. แป้งก้อนกลม 麵糰做成球狀類 -->
-      <area coords="14,871,176,921" shape="rect" onmouseenter="handleHover('5-w.mp3', 'แป้งก้อนกลม', '麵糰做成球狀類')" onmouseleave="hideTooltip()">
+      <area coords="14,871,176,921" shape="rect" onmouseenter="handleHover(event, '5-w.mp3', 'แป้งก้อนกลม', '麵糰做成球狀類')" onmouseleave="hideTooltip()">
 
       <!-- 6. ขนมจีบ 燒賣 -->
-      <area coords="40,408,127,440" shape="rect" onmouseenter="handleHover('6-w.mp3', 'ขนมจีบ', '燒賣')" onmouseleave="hideTooltip()">
+      <area coords="40,408,127,440" shape="rect" onmouseenter="handleHover(event, '6-w.mp3', 'ขนมจีบ', '燒賣')" onmouseleave="hideTooltip()">
       
       <!-- 7. ฮะเก๋า 蝦餃 -->
-      <area coords="291,409,360,440" shape="rect" onmouseenter="handleHover('7-w.mp3', 'ฮะเก๋า', '蝦餃')" onmouseleave="hideTooltip()">
+      <area coords="291,409,360,440" shape="rect" onmouseenter="handleHover(event, '7-w.mp3', 'ฮะเก๋า', '蝦餃')" onmouseleave="hideTooltip()">
       
       <!-- 8. เสี่ยวหลงเปา 小籠包 -->
-      <area coords="502,404,639,442" shape="rect" onmouseenter="handleHover('8-w.mp3', 'เสี่ยวหลงเปา', '小籠包')" onmouseleave="hideTooltip()">
+      <area coords="502,404,639,442" shape="rect" onmouseenter="handleHover(event, '8-w.mp3', 'เสี่ยวหลงเปา', '小籠包')" onmouseleave="hideTooltip()">
       
       <!-- 9. เกี๊ยว 餃子 -->
-      <area coords="784,410,847,445" shape="rect" onmouseenter="handleHover('9-w.mp3', 'เกี๊ยว', '餃子')" onmouseleave="hideTooltip()">
+      <area coords="784,410,847,445" shape="rect" onmouseenter="handleHover(event, '9-w.mp3', 'เกี๊ยว', '餃子')" onmouseleave="hideTooltip()">
       
       <!-- 10. ขนมกุยช่าย 韭菜餃子 -->
-      <area coords="142,525,269,555" shape="rect" onmouseenter="handleHover('10-w.mp3', 'ขนมกุยช่าย', '韭菜餃子')" onmouseleave="hideTooltip()">
+      <area coords="142,525,269,555" shape="rect" onmouseenter="handleHover(event, '10-w.mp3', 'ขนมกุยช่าย', '韭菜餃子')" onmouseleave="hideTooltip()">
       
       <!-- 11. ซุปเกี๊ยว 灌湯餃 -->
-      <area coords="388,521,486,557" shape="rect" onmouseenter="handleHover('11-w.mp3', 'ซุปเกี๊ยว', '灌湯餃')" onmouseleave="hideTooltip()">
+      <area coords="388,521,486,557" shape="rect" onmouseenter="handleHover(event, '11-w.mp3', 'ซุปเกี๊ยว', '灌湯餃')" onmouseleave="hideTooltip()">
       
       <!-- 12. ฝั่นโก๋ 粉果 -->
-      <area coords="677,525,745,558" shape="rect" onmouseenter="handleHover('12-w.mp3', 'ฝั่นโก๋', '粉果')" onmouseleave="hideTooltip()">
+      <area coords="677,525,745,558" shape="rect" onmouseenter="handleHover(event, '12-w.mp3', 'ฝั่นโก๋', '粉果')" onmouseleave="hideTooltip()">
      
       <!-- 13. ฟองเต้าหู้ม้วน 腐皮捲 -->
-      <area coords="122,785,275,812" shape="rect" onmouseenter="handleHover('13-w.mp3', 'ฟองเต้าหู้ม้วน', '腐皮捲')" onmouseleave="hideTooltip()">
+      <area coords="122,785,275,812" shape="rect" onmouseenter="handleHover(event, '13-w.mp3', 'ฟองเต้าหู้ม้วน', '腐皮捲')" onmouseleave="hideTooltip()">
 
       <!-- 13-1. ทอด 腐皮捲-炸 -->
-      <area coords="166,819,220,839" shape="rect" onmouseenter="handleHover('13-1-w.mp3', 'ทอด', '腐皮捲-炸')" onmouseleave="hideTooltip()">
+      <area coords="166,819,220,839" shape="rect" onmouseenter="handleHover(event, '13-1-w.mp3', 'ทอด', '腐皮捲-炸')" onmouseleave="hideTooltip()">
       
       <!-- 13-2. นึ่ง 鮮竹捲-蒸 -->
-      <area coords="263,815,291,838" shape="rect" onmouseenter="handleHover('13-2-w.mp3', 'นึ่ง', '鮮竹捲-蒸')" onmouseleave="hideTooltip()">
+      <area coords="263,815,291,838" shape="rect" onmouseenter="handleHover(event, '13-2-w.mp3', 'นึ่ง', '鮮竹捲-蒸')" onmouseleave="hideTooltip()">
       
       <!-- 14. เปาะเปี๊ยะทอด 春捲 -->
-      <area coords="371,781,519,819" shape="rect" onmouseenter="handleHover('14-w.mp3', 'เปาะเปี๊ยะทอด', '春捲')" onmouseleave="hideTooltip()">
+      <area coords="371,781,519,819" shape="rect" onmouseenter="handleHover(event, '14-w.mp3', 'เปาะเปี๊ยะทอด', '春捲')" onmouseleave="hideTooltip()">
       
       <!-- 15. ก๋วยเตี๋ยวหลอด 粉腸/腸粉 -->
-      <area coords="607,784,779,819" shape="rect" onmouseenter="handleHover('15-w.mp3', 'ก๋วยเตี๋ยวหลอด', '腸粉')" onmouseleave="hideTooltip()">
+      <area coords="607,784,779,819" shape="rect" onmouseenter="handleHover(event, '15-w.mp3', 'ก๋วยเตี๋ยวหลอด', '腸粉')" onmouseleave="hideTooltip()">
 
       <!-- 16. หมั่นโถว 饅頭 -->
-      <area coords="315,1013,411,1043" shape="rect" onmouseenter="handleHover('16-w.mp3', 'หมั่นโถว', '饅頭')" onmouseleave="hideTooltip()">
+      <area coords="315,1013,411,1043" shape="rect" onmouseenter="handleHover(event, '16-w.mp3', 'หมั่นโถว', '饅頭')" onmouseleave="hideTooltip()">
       
       <!-- 17. ซาลาเปา 叉燒包/包子 -->
-      <area coords="507,1014,600,1043" shape="rect" onmouseenter="handleHover('17-w.mp3', 'ซาลาเปา', '包子 / 叉燒包')" onmouseleave="hideTooltip()">
+      <area coords="507,1014,600,1043" shape="rect" onmouseenter="handleHover(event, '17-w.mp3', 'ซาลาเปา', '包子 / 叉燒包')" onmouseleave="hideTooltip()">
       
       <!-- 18. ซาลาเปาไส้หมูแดง 叉燒包 -->
-      <area coords="685,868,833,900" shape="rect" onmouseenter="handleHover('18-w.mp3', 'ซาลาเปาไส้หมูแดง', '叉燒包-其他說法')" onmouseleave="hideTooltip()">
+      <area coords="685,868,833,900" shape="rect" onmouseenter="handleHover(event, '18-w.mp3', 'ซาลาเปาไส้หมูแดง', '叉燒包')" onmouseleave="hideTooltip()">
       
       <!-- 19. ซาลาเปา แบบไม่มีไส้ 沒有餡料 -->
-      <area coords="111,983,280,1020" shape="rect" onmouseenter="handleHover('19-w.mp3', 'ซาลาเปา แบบไม่มีไส้', '沒有餡料')" onmouseleave="hideTooltip()">
+      <area coords="111,983,280,1020" shape="rect" onmouseenter="handleHover(event, '19-w.mp3', 'ซาลาเปา แบบไม่มีไส้', '沒有餡料')" onmouseleave="hideTooltip()">
 
       <!-- 20. มีไส้ข้างใน เช่น เนื้อ หรือผัก 裡面有包餡料，例如肉類或蔬菜 -->
-      <area coords="630,989,856,1023" shape="rect" onmouseenter="handleHover('20-w.mp3', 'มีไส้ข้างใน เช่น เนื้อ หรือผัก', '裡面有包餡料，例如肉類或蔬菜')" onmouseleave="hideTooltip()">
+      <area coords="630,989,856,1023" shape="rect" onmouseenter="handleHover(event, '20-w.mp3', 'มีไส้ข้างใน เช่น เนื้อ หรือผัก', '裡面有包餡料，例如肉類或蔬菜')" onmouseleave="hideTooltip()">
     </map>
   </div>
 
@@ -160,25 +164,65 @@
     });
 
     let currentAudio = null;
+    let lastEvent = null;
 
-    // 2. 滑鼠移動跟隨提示框邏輯
     const tooltip = document.getElementById('custom-tooltip');
     const line1 = document.getElementById('tooltip-line1');
     const line2 = document.getElementById('tooltip-line2');
 
+    // 位置更新與螢幕邊界判斷
+    function updateTooltipPosition(e) {
+      if (!e || tooltip.style.display !== 'block') return;
+
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const tooltipWidth = tooltip.offsetWidth;
+      const tooltipHeight = tooltip.offsetHeight;
+
+      let left = e.clientX + 15;
+      let top = e.clientY + 15;
+
+      // 如果靠最右邊，提示框自動往左靠
+      if (left + tooltipWidth > windowWidth - 10) {
+        left = e.clientX - tooltipWidth - 15;
+      }
+
+      // 如果靠最下邊，提示框自動往上靠
+      if (top + tooltipHeight > windowHeight - 10) {
+        top = e.clientY - tooltipHeight - 15;
+      }
+
+      // 確保不會超過左與上邊界
+      left = Math.max(10, left);
+      top = Math.max(10, top);
+
+      tooltip.style.left = left + 'px';
+      tooltip.style.top = top + 'px';
+    }
+
     document.addEventListener('mousemove', (e) => {
-      if (tooltip.style.display === 'block') {
-        // 讓提示框保持在滑鼠右下方 15px 的位置
-        tooltip.style.left = (e.clientX + 15) + 'px';
-        tooltip.style.top = (e.clientY + 15) + 'px';
+      lastEvent = e;
+      updateTooltipPosition(e);
+    });
+
+    // 支援手機觸控事件
+    document.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 0) {
+        lastEvent = e.touches[0];
+        updateTooltipPosition(e.touches[0]);
       }
     });
 
-    function handleHover(fileName, thaiText, zhText) {
-      // 顯示提示框並設定內容
+    function handleHover(event, fileName, thaiText, zhText) {
       line1.innerText = thaiText;
       line2.innerText = zhText;
       tooltip.style.display = 'block';
+
+      // 當下的位置計算
+      const evt = event || lastEvent;
+      if (evt) {
+        setTimeout(() => updateTooltipPosition(evt), 10);
+      }
 
       // 播放語音
       if (currentAudio) {
